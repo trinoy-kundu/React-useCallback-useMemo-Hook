@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Title from "./Components/Title";
 import ShowCount from "./Components/ShowCount";
 import Button from "./Components/Button";
@@ -8,13 +8,13 @@ function App() {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
 
-  const incrementByOne = () => {
+  const incrementByOne = useCallback(() => {
     setCount1((prevCount) => prevCount + 1);
-  }  
+  }, []);  
 
-  const incrementByFive = () => {
+  const incrementByFive = useCallback(() => {
     setCount2((prevCount) => prevCount + 5);
-  }
+  }, []);
   
 
   return (
