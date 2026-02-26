@@ -15,12 +15,19 @@ function App() {
   const incrementByFive = useCallback(() => {
     setCount2((prevCount) => prevCount + 5);
   }, []);
+
+  const isEvenOdd = () => {
+    let i = 0;
+    while(i < 1000000000) i++;
+    return count1 % 2 === 0;
+  }
   
 
   return (
     <>
       <Title />
       <ShowCount count={count1} title="Counter 1" />
+      <span>{isEvenOdd() ? 'Even': 'Odd'}</span>
       <Button handleClick={incrementByOne}>Increment by one</Button>
       <hr />
       <ShowCount count={count2} title="Counter 2" />
